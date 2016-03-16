@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 
-template <typename T> std::vector<T> splitVec(std::vector<T> &main, size_t from, size_t to) {
+template <typename T> std::vector<T> splitVec(std::vector<T>& main, size_t from, size_t to) {
 
 	std::vector<T>::const_iterator first = main.begin() + from;
 	std::vector<T>::const_iterator last = main.begin() + to;
@@ -13,7 +13,7 @@ template <typename T> std::vector<T> splitVec(std::vector<T> &main, size_t from,
 	return erg;
 }
 
-template <typename T> std::vector<T> merge(std::vector<T> &m1, std::vector<T> &m2) {
+template <typename T> std::vector<T> merge(std::vector<T>& m1, std::vector<T>& m2) {
 
 	unsigned int posA = 0, posB = 0;
 
@@ -36,7 +36,7 @@ template <typename T> std::vector<T> merge(std::vector<T> &m1, std::vector<T> &m
 	return erg;
 }
 
-template <typename T> std::vector<T> mergeSort(std::vector<T> &m) {
+template <typename T> std::vector<T> mergeSort(std::vector<T>& m) {
 
 	if (m.size() > 1) {
 
@@ -50,7 +50,7 @@ template <typename T> std::vector<T> mergeSort(std::vector<T> &m) {
 		return m;
 }
 
-template <typename T> void swap(std::vector<T> &a, size_t x, size_t y) {
+template <typename T> void swap(std::vector<T>& a, size_t x, size_t y) {
 
 	T temp = a[x];
 
@@ -58,7 +58,7 @@ template <typename T> void swap(std::vector<T> &a, size_t x, size_t y) {
 	a[y] = temp;
 }
 
-template <typename T> void selectionSort(std::vector<T> &ar) {
+template <typename T> void selectionSort(std::vector<T>& ar) {
 
 	for (size_t i = 0; i < ar.size() - 1; i++) {
 
@@ -81,9 +81,9 @@ double sort(bool r) {
 	double start = omp_get_wtime();
 
 	if (r)
-		Person::personen = mergeSort(Person::personen);
+		Person::getPersonen() = mergeSort(Person::getPersonen());
 	else
-		selectionSort(Person::personen);
+		selectionSort(Person::getPersonen());
 
 	std::cout << "finished\n\n";
 
@@ -99,7 +99,7 @@ int main()
 	std::cout << "How many entries should be used?\n";
 	std::cin >> count;
 
-	Person::personen.reserve(count);
+	Person::getPersonen().reserve(count);
 
 	double* rec = new double[3];
 	double* normal = new double[3];

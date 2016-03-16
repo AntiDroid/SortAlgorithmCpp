@@ -6,17 +6,28 @@
 
 class Person
 {
-public:
+private:
 
 	std::string vorname, nachname;
 	static std::vector<Person> personen;
 
-	Person(std::string &vn, std::string &nn);
+public:
+
+	Person(std::string& vn, std::string& nn);
 	~Person();
 
-	std::string toString();
-	int compareTo(Person &o);
+	void setVorname(std::string& vn);
+	void setNachname(std::string& nn);
 
-	static void readAndSetUp(std::string &fileName, int &c);
+	std::string& getVorname();
+	std::string& getNachname();
+
+	static void setPersonen(std::vector<Person>& p);
+	static std::vector<Person>& getPersonen();
+
+	std::string& toString();
+	int compareTo(Person& o);
+
+	static void readAndSetUp(std::string& fileName, int& c);
 };
 

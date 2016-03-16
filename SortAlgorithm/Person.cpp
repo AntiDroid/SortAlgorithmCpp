@@ -4,7 +4,7 @@
 
 std::vector<Person> Person::personen;
 
-Person::Person(std::string &vn, std::string &nn)
+Person::Person(std::string& vn, std::string& nn)
 {
 	vorname = vn;
 	nachname = nn;
@@ -14,11 +14,34 @@ Person::~Person()
 {
 }
 
-std::string Person::toString() {
+void Person::setVorname(std::string& vn) {
+	this->vorname = vn;
+}
+
+void Person::setNachname(std::string& nn) {
+	this->nachname = nn;
+}
+
+std::string& Person::getVorname() {
+	return this->vorname;
+}
+
+std::string& Person::getNachname() {
+	return this->nachname;
+}
+
+void Person::setPersonen(std::vector<Person>& p) {
+	Person::personen = p;
+}
+std::vector<Person>& Person::getPersonen() {
+	return Person::personen;
+}
+
+std::string& Person::toString() {
 	return "Vorname: " + vorname + "   \t\tNachname: " + nachname + "\n";
 }
 
-void Person::readAndSetUp(std::string &fileName, int &c) {
+void Person::readAndSetUp(std::string& fileName, int& c) {
 
 	std::ifstream reader;
 	reader.open("c:/emp_" + fileName + ".csv");
@@ -48,7 +71,7 @@ void Person::readAndSetUp(std::string &fileName, int &c) {
 	}
 }
 
-int Person::compareTo(Person &o) {
+int Person::compareTo(Person& o) {
 
 	const char *c1 = this->nachname.c_str();
 	const char *c2 = o.nachname.c_str();
