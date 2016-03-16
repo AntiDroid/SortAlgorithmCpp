@@ -25,9 +25,9 @@ public:
 	static void setPersonen(std::vector<Person>& p);
 	static std::vector<Person>& getPersonen();
 
-	std::string& toString();
+	std::string toString();
 	int compareTo(Person& o);
 
-	static void readAndSetUp(std::string& fileName, int& c);
+	static void readAndSetUp(const std::string& fileName, int& c);
 };
 

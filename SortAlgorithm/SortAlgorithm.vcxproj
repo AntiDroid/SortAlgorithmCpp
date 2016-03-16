@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Functions.cpp" />
     <ClCompile Include="SortAlgorithm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
