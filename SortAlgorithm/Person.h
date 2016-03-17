@@ -27,6 +27,7 @@ public:
 
 	std::string toString();
 	int compareTo(Person& o);
+	bool equals(Person& p);
 
 	static void readAndSetUp(const std::string& fileName, int& c);
 };

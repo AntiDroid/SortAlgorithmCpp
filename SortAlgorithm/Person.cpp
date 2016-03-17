@@ -42,6 +42,10 @@ std::string Person::toString() {
 	return "Vorname: " + vorname + "   \t\tNachname: " + nachname + "\n";
 }
 
+bool Person::equals(Person& p) {
+	return (this->getVorname() == p.getVorname()) && (this->getNachname() == p.getNachname());
+}
+
 void Person::readAndSetUp(const std::string& fileName, int& c) {
 
 	std::ifstream reader;

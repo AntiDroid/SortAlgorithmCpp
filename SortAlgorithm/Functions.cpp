@@ -20,6 +20,7 @@ namespace sorting_functions {
 		erg.reserve(m1.size() + m2.size());
 
 		while (posA < m1.size() && posB < m2.size()) {
+
 			if (m1[posA].compareTo(m2[posB]) <= 0)
 				erg.push_back(m1[posA++]);
 			else
@@ -65,7 +66,6 @@ namespace sorting_functions {
 			for (size_t j = (i + 1); j < ar.size(); j++)
 				if (ar[min].compareTo(ar[j]) == 1)
 					min = j;
-
 			swap(ar, i, min);
 		}
 	}

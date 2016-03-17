@@ -51,7 +51,7 @@ int main()
 			Person::readAndSetUp(mode[i], count);
 			rec[i] = sort(recursive);
 
-			Person::readAndSetUp(mode[1], count);
+			Person::readAndSetUp(mode[i], count);
 			normal[i] = sort(!recursive);
 		}
 
@@ -62,7 +62,7 @@ int main()
 		std::cout << "\n" << mode[2] << "\t\t" << rec[2] << "ms\t     " << normal[2] << "ms\n";
 		std::cout << "       ----------------------------\n";
 		std::cout << "\nItems: " << count << "\n\n\n";
-
+		
 		delete[] rec;
 		delete[] normal;
 
