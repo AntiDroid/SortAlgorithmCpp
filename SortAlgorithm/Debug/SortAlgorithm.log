@@ -1,4 +1,8 @@
-﻿  SortAlgorithm.cpp
+﻿  stdafx.cpp
+  SortAlgorithm.cpp
+c:\users\ndsts_000\documents\visual studio 2015\projects\sortalgorithm\sortalgorithm\sortalgorithm.cpp(78): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+c:\users\ndsts_000\documents\visual studio 2015\projects\sortalgorithm\sortalgorithm\sortalgorithm.cpp(82): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+  Functions.cpp
   Person.cpp
   Code wird generiert...
-  SortAlgorithm.vcxproj -> C:\Users\Talip\Documents\Visual Studio 2015\Projects\SortAlgorithm\Debug\SortAlgorithm.exe
+  SortAlgorithm.vcxproj -> C:\Users\ndsts_000\Documents\Visual Studio 2015\Projects\SortAlgorithm\Debug\SortAlgorithm.exe

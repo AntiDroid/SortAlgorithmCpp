@@ -16,7 +16,7 @@ double sort(bool r) {
 	if (r)
 		Person::getPersonen() = sorting_functions::mergeSort(Person::getPersonen());
 	else
-		sorting_functions::selectionSort(Person::getPersonen());
+		sorting_functions::quickSort(Person::getPersonen(), 4, 10);
 
 	std::cout << "\tfinished\n\n";
 
@@ -31,7 +31,7 @@ int main()
 
 	do {
 
-		std::cout << "How many entries should be used?\n";
+		std::cout << "\n\nHow many entries should be used?\n";
 		std::cin >> count;
 
 		//Fully empty cin buffer
@@ -46,6 +46,7 @@ int main()
 		double* rec = new double[3];
 		double* normal = new double[3];
 
+		/*
 		for (int i = 0; i < 3; i++) {
 
 			Person::readAndSetUp(mode[i], count);
@@ -62,9 +63,32 @@ int main()
 		std::cout << "\n" << mode[2] << "\t\t" << rec[2] << "ms\t     " << normal[2] << "ms\n";
 		std::cout << "       ----------------------------\n";
 		std::cout << "\nItems: " << count << "\n\n\n";
+		*/
+
+		int fail = 0;
+
+		Person::readAndSetUp("avg", count);
+		sort(recursive);
+
+		std::vector<Person> neu(Person::getPersonen());
+
+		Person::readAndSetUp("avg", count);
+		sort(!recursive);
+
+		for (size_t i = 0; i < count; i++)
+			if (!neu[i].equals(Person::getPersonen()[i]))
+				fail++;
 		
+		for (size_t i = 0; i < count; i++)
+		{
+			std::cout << "\n" << neu[i].toString();
+			std::cout << Person::getPersonen()[i].toString();
+		}
+
 		delete[] rec;
 		delete[] normal;
+
+		std::cout << "\n Fails: " << fail;
 
 	} while (true);
 

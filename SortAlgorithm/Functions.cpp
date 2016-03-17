@@ -50,6 +50,29 @@ namespace sorting_functions {
 			return m;
 	}
 
+	template <typename T> void quickSort(std::vector<T>& m, int left, int right) {
+
+		int le, ri; le = left; ri = right;
+		T pivot = m[(le + ri) / 2];
+
+		while (le <= ri) {
+			while (m[le].compareTo(pivot) == 1) {
+				le++;
+			}
+			while (pivot.compareTo(m[ri]) == 1) {
+				ri--;
+			}
+			if (le <= ri) {
+				swap(m, le, ri);
+				le++;
+				ri--;
+			}
+		}
+
+		if (left < ri) { quickSort(m, left, ri); }
+		if (le < right) { quickSort(m, le, right); }
+	}
+
 	template <typename T> void swap(std::vector<T>& a, size_t x, size_t y) {
 
 		T temp = a[x];

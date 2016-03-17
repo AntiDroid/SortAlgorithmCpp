@@ -39,7 +39,7 @@ std::vector<Person>& Person::getPersonen() {
 }
 
 std::string Person::toString() {
-	return "Vorname: " + vorname + "   \t\tNachname: " + nachname + "\n";
+	return "VN: " + vorname + "  \t\tNN: " + nachname + "\n";
 }
 
 bool Person::equals(Person& p) {
